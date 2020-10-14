@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="app" class="container">
+
+        <cabecera :color-jugar='colorJugar'></cabecera>
+        
+        <navegador 
+            :color-jugar='colorJugar' 
+            :colors='colors' 
+            :mensaje='mensaje'>
+        </navegador>
+
+        <cuadrado v-for="(color, index) in colors"
+            :color="color"
+            :index="index"
+            :key="myKey(color)" 
+            :colors='colors'
+            :conocer-ganador="conocerGanador">
+        </cuadrado>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
